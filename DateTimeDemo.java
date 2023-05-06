@@ -1,3 +1,4 @@
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
@@ -20,5 +21,8 @@ public class DateTimeDemo {
 */
         LocalTime time2 = LocalTime.now(ZoneId.of("Asia/Calcutta"));
         System.out.println(time2);
+
+        Instant i = Instant.now();
+        System.out.println(i);
     }
 }
