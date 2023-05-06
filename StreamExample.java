@@ -63,5 +63,10 @@ public class StreamExample {
 
         Stream<Integer> sortedData = values.stream().sorted();
         sortedData.forEach(value-> System.out.println(value));
+
+        System.out.println("after mapping and making double each value inside list");
+
+        Stream<Integer> mappedData = values.stream().map(n->n*2);
+        mappedData.forEach(data-> System.out.println(data));
     }
 }
