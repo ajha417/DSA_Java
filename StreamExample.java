@@ -43,8 +43,14 @@ public class StreamExample {
                 );
 
 //        to print only those names whose lastname starts with C
-        people.stream().
+       /* people.stream().
         filter(p->p.getLastname().startsWith("E")).
-                forEach(p-> System.out.println(p.getFirstname()));
+                forEach(p-> System.out.println(p.getFirstname()));*/
+
+//        to count the number using parallel streaming
+        long count = people.parallelStream()
+                .filter(p->p.getLastname().startsWith("E"))
+                .count();
+        System.out.println(count);
     }
 }
