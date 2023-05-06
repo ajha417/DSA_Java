@@ -41,6 +41,10 @@ public class StreamExample {
                 new Persons("Sir Isaac","Newton",35),
                 new Persons("Nikola","Tesla",28)
                 );
-        people.stream().forEach(p-> System.out.println(p.getFirstname()));
+
+//        to print only those names whose lastname starts with C
+        people.stream().
+        filter(p->p.getLastname().startsWith("E")).
+                forEach(p-> System.out.println(p.getFirstname()));
     }
 }
