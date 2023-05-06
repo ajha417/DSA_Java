@@ -1,5 +1,8 @@
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
+
 class Persons{
     private String firstname,lastname;
     private int age;
@@ -48,9 +51,17 @@ public class StreamExample {
                 forEach(p-> System.out.println(p.getFirstname()));*/
 
 //        to count the number using parallel streaming
-        long count = people.parallelStream()
-                .filter(p->p.getLastname().startsWith("E"))
-                .count();
-        System.out.println(count);
+//        long count = people.parallelStream()
+//                .filter(p->p.getLastname().startsWith("E"))
+//                .count();
+//        System.out.println(count);
+
+//        once the stream is consumed it cannot be used again
+//        using map method
+
+        List<Integer> values = Arrays.asList(4,5,1,2,6);
+
+        Stream<Integer> sortedData = values.stream().sorted();
+        sortedData.forEach(value-> System.out.println(value));
     }
 }
