@@ -1,11 +1,23 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 
-class Container<T>{
+class Container<T extends Number>{ //this will bound class to have only of number type or its sub-class type
     T value;
+
+    public T getValue(){
+        return value;
+    }
+    public void setValue(T value){
+        this.value = value;
+    }
     public void showType(){
         System.out.println(value.getClass().getName());
+    }
+
+    public void demo(ArrayList<? super T> obj){
+
     }
 }
 public class GenericsExample {
@@ -24,5 +36,6 @@ public class GenericsExample {
         Container<Integer> obj = new Container();
         obj.value = 10;
         obj.showType();
+        obj.demo(new ArrayList<Number>());
     }
 }
