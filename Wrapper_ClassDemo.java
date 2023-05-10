@@ -3,7 +3,7 @@ public class Wrapper_ClassDemo {
         int i = 5;  //primitive variable
         Integer i1 = 10; //reference variable;
 
-        Integer i2 = new Integer(i); //this is called boxing or wrapping
+        Integer i2 = Integer.valueOf(i); //this is called boxing or wrapping
         int j = i2.intValue(); //this is called unboxing or unwrapping
 
 
