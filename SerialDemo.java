@@ -8,7 +8,7 @@ public class SerialDemo {
         obj.i = 10;
         FileOutputStream fos = new FileOutputStream(f);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(obj);
+        oos.writeObject(obj);  //it saves the state of object
 
         FileInputStream fis = new FileInputStream(f);
         ObjectInputStream ois = new ObjectInputStream(fis);
