@@ -1,3 +1,5 @@
+import java.util.PriorityQueue;
+
 public class MaximumAveragePassRatio {
     public static void main(String[] args) {
 
@@ -21,21 +23,34 @@ Return the maximum possible average pass ratio after assigning the extraStudents
         System.out.println(ans);
     }
     private static double maxAverageRatio(int[][] classes, int extraStudents) {
-        double maxAvg = Integer.MAX_VALUE;
-        int index = 0;
-        for(int i = 0; i < classes.length; i++) {
-            double currAvg = (double)((double) (classes[i][0]) / (classes[i][1]));
-            if(currAvg < maxAvg) {
-                maxAvg = currAvg;
-                index = i;
-            }
+        PriorityQueue<double[]> maxHeap = new PriorityQueue<>((a,b) -> Double.compare(b[0], a[0]));
+
+        for (int[] singleClass : classes) {
+            int pass = singleClass[0];
+            int total = singleClass[1];
+            double gain = calculateGain(pass, total);
+            maxHeap.offer(new double[]{gain, pass, total});
         }
-        classes[index][0] = classes[index][0] + extraStudents;
-        classes[index][1] = classes[index][1] + extraStudents;
+
+        while(extraStudents-- > 0) {
+            double[] curr = maxHeap.poll();
+            assert curr != null;
+            int passes = (int)  curr[1];
+            int total = (int)  curr[2];
+            maxHeap.offer(new double[]{calculateGain(passes + 1, total + 1), passes + 1, total + 1});
+        }
+
         double ans = 0;
-        for(int i = 0; i < classes.length; i++) {
-            ans += (double) ((double) classes[i][0] / classes[i][1]);
+        while(!maxHeap.isEmpty()) {
+            double[] current = maxHeap.poll();
+            int passes = (int) current[1];
+            int total = (int) current[2];
+            ans += (double) passes/total;
         }
         return ans / classes.length;
+    }
+
+    private static double calculateGain(int pass, int total) {
+        return (double) (pass+ 1) / (total + 1) - (double) pass/total;
     }
 }
