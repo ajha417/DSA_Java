@@ -1,4 +1,4 @@
-package com.array;
+package com.programming.array;
 
 public class MoveZeroToEnd {
     public static void main(String[] args) {
