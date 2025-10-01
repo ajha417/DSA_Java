@@ -1,5 +1,3 @@
-package com.company;
-
 public class Sorting_0s1s {
     public static  void sorting(int []arr,int n){
         int low=0;

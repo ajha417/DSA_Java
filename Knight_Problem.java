@@ -1,4 +1,3 @@
-package com.company;
 
 public class Knight_Problem {
     static int N=8;

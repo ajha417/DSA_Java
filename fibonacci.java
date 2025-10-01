@@ -1,5 +1,3 @@
-package com.company;
-
 import java.util.Scanner;
 
 public class fibonacci {
@@ -8,8 +6,6 @@ public class fibonacci {
         int n1=0;
         int n2=1;
         int n3;
-
-//        i
         System.out.println("Enter the term:");
         int term=sc.nextInt();
         for(int i=0;i<term;i++){
@@ -17,10 +13,6 @@ public class fibonacci {
             System.out.print(n3+" ");
             n1=n2;
             n2=n3;
-
-
-
-
         }
     }
 }
