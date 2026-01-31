@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.prep;
 
 public class ContainerWithMostWater {
     public static void main(String[] args) {
