@@ -1,9 +1,6 @@
-package com.leetcode.dp;
+package com.leetcode.prep.dp;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
 
 public class JumpGame {
     public static void main(String[] args) {

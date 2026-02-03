@@ -1,6 +1,4 @@
-package com.leetcode.dp;
-
-import java.util.Arrays;
+package com.leetcode.prep.dp;
 
 public class HouseRobber {
     public static void main(String[] args) {
